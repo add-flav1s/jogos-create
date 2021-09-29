@@ -77,11 +77,14 @@ ul#computador-escolha li {
     display: inline;
 }
 
-ul#jogador-escolha a {
+ul#jogador-escolha li a,
+ul#computador-escolha li a {
     opacity: .3;
 }
 
-ul#jogador-escolha a:hover {
+ul#jogador-escolha li a:hover,
+ul#jogador-escolha li a.selecionado,
+ul#computador-escolha li a.selecionado {
     opacity: 1;
 }
 
@@ -99,4 +102,5 @@ ul#computador-escolha a img {
     margin: 30px 0;
     font-size: 24px;
     font-weight: 600;
+    color: #fff;
 }
