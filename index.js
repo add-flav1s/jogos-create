@@ -1,8 +1,12 @@
 var jogadorEscolha = 0
 var computadorEscolha = 0
+
+var jogadorPontuacao = 0
+var computadorPontuacao = 0
+
 var ganhador = -1
 
-
+document.getElementById('mensagens').innerHTML = ''
 
 function jogar(escolha) {
     jogadorEscolha = escolha
@@ -29,19 +33,27 @@ function jogar(escolha) {
         ganhador = 0
     }
 
+    document.getElementById("jogador-escolha-1").classList.remove('selecionado')
+    document.getElementById("jogador-escolha-2").classList.remove('selecionado')
+    document.getElementById("jogador-escolha-3").classList.remove('selecionado')
+
+    document.getElementById("computador-escolha-1").classList.remove('selecionado')
+    document.getElementById("computador-escolha-2").classList.remove('selecionado')
+    document.getElementById("computador-escolha-3").classList.remove('selecionado')
+
     document.getElementById("jogador-escolha-" + jogadorEscolha).classList.add('selecionado')
     document.getElementById("computador-escolha-" + computadorEscolha).classList.add('selecionado')
-
 
     if (ganhador == 0) {
         document.getElementById('mensagens').innerHTML = 'Empate'
     } else if (ganhador == 1) {
         document.getElementById('mensagens').innerHTML = 'Você ganhou'
+        jogadorPontuacao++
     } else if (ganhador == 2) {
         document.getElementById('mensagens').innerHTML = 'Computador ganhou'
+        computadorPontuacao++
     }
 
-
-
-
+    document.getElementById('jogador-pontos').innerHTML = jogadorPontuacao
+    document.getElementById('computador-pontos').innerHTML = computadorPontuacao
 }
